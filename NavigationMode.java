@@ -1,13 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package team147;
 
 /**
- *
- * @author Bovard
+ * Different Navigation modes that a robot can use, implemented in the NavigationController class
+ * @author bovard
  */
-public class NavigationMode {
-    
+public final class NavigationMode {
+  public static final int A_STAR = 0;
+  public static final int BUG = 1;
+  public static final int FLOCK = 2;
 }
