@@ -40,7 +40,6 @@ public class NavigationSystem {
    */
   public NavigationSystem(RobotController robotControl) {
     this.robotControl = robotControl;
-    
     mode = NavigationMode.BUG;
     //added to make things a bit more random!
     rand.setSeed(Clock.getRoundNum());
@@ -52,7 +51,8 @@ public class NavigationSystem {
    * @param control the MovementController
    * @param destination the MapLocation to be the destination
    */
-  public NavigationSystem(MapLocation dest) {
+  public NavigationSystem(RobotController robotControl, MapLocation dest) {
+    this.robotControl = robotControl;
     this.destination = dest;
     has_destination = true;
     robotControl.setIndicatorString(2, "Dest: "+dest.toString());
