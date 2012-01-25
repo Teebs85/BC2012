@@ -7,9 +7,6 @@ import java.util.Random;
  * The NavigationSystem needs to be given a RobotController to issue commands to
  * It will check to see if it's non-active before issuing commands
  *
- * Note: this class shouldn't be doing any checking to see if it actually can set the
- * movement controller, but it still does. it will print a warning if it can't
- *
  * Note: this class should only be used when trying to navigate somewhere. Fleeing, combat
  * movement
  *
@@ -48,8 +45,8 @@ public class NavigationSystem {
 
   /**
    * Creates a navSystem with a destination already in mind
-   * @param control the MovementController
-   * @param destination the MapLocation to be the destination
+   * @param robotControl the RobotController
+   * @param dest the MapLocation to be the destination
    */
   public NavigationSystem(RobotController robotControl, MapLocation dest) {
     this.robotControl = robotControl;
@@ -57,15 +54,6 @@ public class NavigationSystem {
     has_destination = true;
     robotControl.setIndicatorString(2, "Dest: "+dest.toString());
     mode = NavigationMode.BUG;
-  }
-
-  /**
-   * checks to see if the robot can move in the specified direction
-   * @param direction direction to move in
-   * @return if the bot can move in that direction
-   */
-  public boolean canMove(Direction direction) {
-    return robotControl.canMove(direction);
   }
 
   /**
