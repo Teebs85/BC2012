@@ -5,6 +5,9 @@ import battlecode.common.*;
 public class RobotPlayer {
 
     public static void run(RobotController myRC) {
+        if (myRC.getType() == RobotType.ARCHON) {
+            // call to Archon class here to start it off!
+        }
         while (true) {
             try {
                 while (myRC.isMovementActive()) {
